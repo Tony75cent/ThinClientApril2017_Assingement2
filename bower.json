@@ -1,0 +1,7 @@
+{
+    "name": "ThinClientApril2017_Assingement2", "version": "1.0.0", "main": "path/to/main.css", "ignore": [
+        ".jshintrc", "**/*.txt"
+    ], "dependencies": {
+    }, "devDependencies": {
+    }
+}

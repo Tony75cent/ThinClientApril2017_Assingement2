@@ -37,7 +37,7 @@
                     <td>
                         <xsl:value-of select="date"/>
                     </td>
-                    <td>
+                    <td contentedtiable = 'true'>
                         <xsl:value-of select="result"/>
                     </td>
                 </tr>    

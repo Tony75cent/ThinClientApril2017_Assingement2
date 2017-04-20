@@ -15,7 +15,7 @@
     <fixtures field="Football">
         <match>Rep. of Ireland v England</match>
         <location>Zenit Arena,St. Petersburg</location>
-        <date> Monday.13 june 2016</date>
+        <date> Monday.13 june </date>
         <result id='match_2'> 3:2</result>
 
     </fixtures>

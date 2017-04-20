@@ -51,7 +51,6 @@
         }
       });
     }
-    google.setOnLoadCallback(initialize2);
 
     
   

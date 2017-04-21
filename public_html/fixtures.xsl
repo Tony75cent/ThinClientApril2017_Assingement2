@@ -21,7 +21,7 @@
                 <th align='left'>match</th>
                 <th align='left'>location</th>
                 <th align='left' >date</th>
-                <th align='left' >result</th>
+                <!--th align='left' >result</th-->
 
             </tr>
         
@@ -37,9 +37,9 @@
                     <td>
                         <xsl:value-of select="date"/>
                     </td>
-                    <td contentedtiable = 'true'>
+                    <!--td contentedtiable = 'true'>
                         <xsl:value-of select="result"/>
-                    </td>
+                    </td-->
                 </tr>    
             </xsl:for-each>
         </table>

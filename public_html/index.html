@@ -35,6 +35,7 @@ and open the template in the editor.
           <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -43,13 +44,23 @@ and open the template in the editor.
         <script src="js/jsFunctions.js" type="text/javascript"></script>
         <link href="11_turquoise_yellow/11_turquoise_yellow/css/www_rate_calc_frame.css" rel="stylesheet" type="text/css"/>
         <link href="http://www.your-website.com/css/6_dark_orange/css/www_rate_calc_frame.css" rel="stylesheet" title="stylesheet" type="text/css" />
+        <script src="weather-master/weather-master/dist/weather.js" type="text/javascript"></script>
+        <script src="weather-master/weather-master/dist/weather.min.js" type="text/javascript"></script>
+        <link href= " http://api.openweathermap.org/data/2.5/forecast?id=524901&34b81063056317188429f8bc5c4e347a"/>
+        <!--script src="jspkg-archive/jquery.dynatable.js" type="text/javascript"></script-->
+        <!--link href="jspkg-archive/jquery.dynatable.css" rel="stylesheet" type="text/css"/-->
+        <script src="js/jQuery_Dynatable.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
+
+
+
     </head> 
     <body onload="LoadFixtures()">
-
         <div id= "header"><h1>UEFA European Championship 2016 Final Tournament - Group Stage</h1></div>
-      
-
-<!-- Static navbar -->
+        <!-- Static navbar -->
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -61,6 +72,7 @@ and open the template in the editor.
                     </button>
                     <a class="navbar-brand" href="#">Project name</a>
                 </div>
+
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
@@ -70,7 +82,6 @@ and open the template in the editor.
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><></li>
-                                <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Nav header</li>
@@ -81,8 +92,7 @@ and open the template in the editor.
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="../navbar/">Default</a></li>
-                        <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-                        <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                        <li class="active"><div id='openweathermap-widget'></div></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -95,64 +105,68 @@ and open the template in the editor.
             <div align="center" class="jumbotron">
                 <p><img src="Images/FIFA_World_Cup_Russia_2018_bidding_logo.svg.png" height="100" width="500" alt=""/></p>
                 <div id="matchlist"></div>
-<div id="footer">
-                <button class="btn btn-success" id="p1" onclick="LoadFixtures('desc');">Sort in Descending order</button>
-                <button class="btn btn-info" id="p2" onclick="LoadFixtures('asc');">Sort in Ascending order</button><br><br>
-            </div> 
-            <div class="container-fluid">
-      <div class="row">
-<div class="col-sm-3 col-md-2 sidebar">
-    <ul class="nav nav-sidebar">
-            <li><a href="http://www.transfermate.com/" target="_blank" id="tm_add146" class="tm_add146"></a></div><script src="https://www.transfermate.com/en/exchange_rates_api.asp?csel=RUB,EUR&cshort=" type="text/javascript"></script><!--noscript><br/><span style="color: red;">Please enable your javascript.</span></noscript-->
-</li>
- <li><script type="text/javascript" src="http://output34.rssinclude.com/output?type=js&amp;id=1134777&amp;hash=a839ea5ce2a61f79806f207af2aa2416"></script>
-</li>
-<li><script type="text/javascript" src="http://output35.rssinclude.com/output?type=js&amp;id=1134782&amp;hash=3fbd08c3f6fa5acbeda4d6e333def293"></script>
-</li>
-<li><script type="text/javascript" src="http://output52.rssinclude.com/output?type=js&amp;id=1134772&amp;hash=3b186903a90f3874e6e05aa1d2cc2ba2"></script></li>
-</ul>
-          
-          
-        </div>
-      </div>
- </div>
+                <div id="footer">
+                    <button class="btn btn-success" id="p1" onclick="LoadFixtures('desc');">Sort in Descending order</button>
+                    <button class="btn btn-info" id="p2" onclick="LoadFixtures('asc');">Sort in Ascending order</button><br><br>
+                </div> 
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-2 sidebar">
+                            <ul class="nav nav-sidebar">
+                                <li><a href="http://www.transfermate.com/" target="_blank" id="tm_add146" class="tm_add146"></a><div><script src="https://www.transfermate.com/en/exchange_rates_api.asp?csel=RUB,EUR&cshort=" type="text/javascript"></script></div><noscript><br/><!--span style="color: red;">Please enable your javascript.</span--></noscript>
+                                </li>
+                                <li><script type="text/javascript" src="http://output34.rssinclude.com/output?type=js&amp;id=1134777&amp;hash=a839ea5ce2a61f79806f207af2aa2416"></script>
+                                </li>
+                                <li><script type="text/javascript" src="http://output35.rssinclude.com/output?type=js&amp;id=1134782&amp;hash=3fbd08c3f6fa5acbeda4d6e333def293"></script>
+                                </li>
+                                <li><script type="text/javascript" src="http://output52.rssinclude.com/output?type=js&amp;id=1134772&amp;hash=3b186903a90f3874e6e05aa1d2cc2ba2"></script></li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="row">
+
+                <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-6"><div id="powerd">
+                    </div>
+                    <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="list-group">
+                        <div>
+                        </div>
+                        <h1>Dynatable.js<div id="my-table"></div></h1>
+                        
+                        <div id='example'></div>
+                    </div>
+
+
+                </div><!--
             
-
-            </div>
- 
-            
-
-    <div class="row">
-        
-        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
-            </div>
-        </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-5 col-lg-6"><div id="powerd">
-</div>
-        <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0"></div>
-</div>
-    <div class="col-sm-4">
-        <div class="list-group">
-            <div>
-            </div>
-
-        </div>
-    </div><!--
-
-</div> <!-- /container -->
+            </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
-</html>
+                <!-- Bootstrap core JavaScript
+                ================================================== -->
+                <!-- Placed at the end of the document so the pages load faster -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+                <script src="../../dist/js/bootstrap.min.js"></script>
+                <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+                </body>
+                </html>
 
 
 

@@ -3,6 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+    
+
  function loadXMLDoc(filename)
                 {
                     xhttp = new XMLHttpRequest();
@@ -52,6 +55,21 @@
       });
     }
 
-    
+     window.myWidgetParam = {
+                        id: 13,
+                        cityid: 2966794,
+                        appid: '34b81063056317188429f8bc5c4e347a',
+                        units: 'metric',
+                        containerid: 'openweathermap-widget',                        
+                    };
+                    (function() {
+                        var script = document.createElement('script');
+                        script.type = 'text/javascript';
+                        script.async = true;
+                        script.src = 'http://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(script, s);
+                    })();
   
+
 

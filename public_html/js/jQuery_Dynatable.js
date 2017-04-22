@@ -38,7 +38,7 @@ $(document).ready(function () {
    }
    function makeTableVisible(){
        
-       document.getElementById("my-table").style.display.visible;
+       document.getElementById("my-table").style.display = "visible";
        
        
        

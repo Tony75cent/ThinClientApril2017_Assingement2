@@ -8,7 +8,9 @@ and open the template in the editor.
     Author     : AnthonyQuinn
 */
 
-#my-table{
-     border-collapse: collapse;
-    visibility:hidden;
+#my-table {
+    /** border-collapse: collapse; **/
+  /**  visibility:hidden; **/
+        visibility:visible;
+
 }

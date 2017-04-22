@@ -28,6 +28,8 @@
                     document.getElementById("matchlist").innerHTML = "";
                     document.getElementById("matchlist").appendChild(resultDocument);
                 }
+                
+  
 
 /**google.load("feeds", "1"); **/
    // window.onclick="initalize()";
@@ -70,6 +72,6 @@
                         var s = document.getElementsByTagName('script')[0];
                         s.parentNode.insertBefore(script, s);
                     })();
+                    
+                    
   
-
-

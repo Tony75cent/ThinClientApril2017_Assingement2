@@ -9,7 +9,8 @@ $(document).ready(function () {
 
     $("#openweathermap-widget").on("mouseover", textMsg);
     $("#openweathermap-widget").on("mouseout", textMsg2);
-    $("#resultPredictor").on("click",makeTableVisible); 
+    $("#resultPredictor").on("click",makeTableVisible);
+    $("#resultPredictor2").on("click",getMatchFixtureDatails);
     
    /** $("#resultPredictor").on("click",) **/
 
@@ -45,6 +46,36 @@ $(document).ready(function () {
        
        
    }
+   function getMatchFixtureDatails(){
+      $.ajax({
+        type: "GET",
+        url: "matchFixtures.xml",
+        dataType: "xml",
+        success: function (xml) {
+            var table = '<table>';
+            table += '<thead><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>';
+
+            $(table).addClass('table table-striped'); 
+           /** $('table').attr('id', 'myResultPredictor'); **/
+            
+            
+            $(xml).find('fixtures').each(function () {
+                var team1 = $(this).find('team1').text();
+               /** var id = $(this).attr('id'); **/
+                var team2 = $(this).find('team2').text();
+                
+         /**  var match1 =     $('match').reverse(); **/
+/** var [] = $(xml).toArray().reverse(); **/
+    
+               /** table += '<tr><td>' + match + '</td><td>' + location + '</td><td>' + date + '</td><td contenteditable=true>' + result + '</td></tr>';**/
+                table += '<tbody><tr><td>' + team1 + '</td><td contenteditable=true> <td>' + team2 + '</td><td contenteditable=true > </td></tr></tbody>';
+
+            });
+            table += '</table>';
+            $('#update').html(table);
+        }
+    });
+   
    /**
   function createLocalStorage() { 
   $.ajax({
@@ -72,7 +103,7 @@ $(document).ready(function () {
                /** table += '<tr><td>' + match + '</td><td>' + location + '</td><td>' + date + '</td><td contenteditable=true>' + result + '</td></tr>';**/
            /**     table += '<tbody><tr><td>' + match + '</td><td>' + location + '</td><td data-field-type=date>' + date + '</td><td  contenteditable=true>' + result + '</td></tr></tbody>'; **/
 
-            });
+   } });
             /** table += '</table>'; **/
          /**   $('#update').html(table); **/
      /**   } **/

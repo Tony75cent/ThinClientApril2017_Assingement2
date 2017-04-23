@@ -5,7 +5,7 @@
 <Fixtures>
     <fixtures field="Football">
     
-        <match>Brazil v Rep. of Ireland</match>
+        <match>Brazil v  Ireland</match>
         <location>Luzhniki Stadium,Moscow</location>
         <date>Saturday, June 11</date>
         <!--result id='match_1'> 2:1</result-->
@@ -13,7 +13,7 @@
     </fixtures>
      
     <fixtures field="Football">
-        <match>Rep. of Ireland v England</match>
+        <match> Ireland v England</match>
         <location>Zenit Arena,St. Petersburg</location>
         <date> Monday.13 june </date>
         <!--result id='match_2'> 3:2</result-->
@@ -21,7 +21,7 @@
     </fixtures>
      
     <fixtures field="Football">
-        <match> Italy v Rep. of Ireland</match>
+        <match> Italy v Ireland</match>
         <location>Fisht Olympic Stadium,Sochi</location>
         <date>Tuesday, June 14 </date>
         <!--result id='match_3'> 3:1</result-->

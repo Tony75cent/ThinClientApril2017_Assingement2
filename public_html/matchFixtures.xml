@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<Fixtures>
+    <fixtures field="Football">
+    
+        <team1>Brazil</team1>
+       <team2>Ireland</team2>
+
+    </fixtures>
+     
+    <fixtures field="Football">
+        <team1> Ireland </team1>
+        <team2>England</team2>
+
+    </fixtures>
+     
+    <fixtures field="Football">
+        <team1> Italy</team1>
+        <team2>Ireland</team2>
+
+    </fixtures>
+      
+    <fixtures field="Football">
+        <team1>Italy</team1>
+        <team2>England</team2>
+
+    </fixtures>
+    <fixtures field="Football">
+        <team1>Italy </team1>
+        <team2>Brazil</team2>
+
+    </fixtures>
+             
+	
+</Fixtures>
+
+

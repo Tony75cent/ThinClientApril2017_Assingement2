@@ -55,8 +55,10 @@ and open the template in the editor.
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
         <link href="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
         <link href="CSS/myTable.css" rel="stylesheet" type="text/css"/>
-
-
+        <script src="tableSorter/tablesorter/jquery.tablesorter.js" type="text/javascript"></script>
+        <!--script src="tableSorter/tablesorter/jquery.metadata.js" type="text/javascript"></script-->
+        <!--script src="tableSorter/tablesorter/jquery.tablesorter.min.js" type="text/javascript"></script-->
+        <script src="tableSorter/tablesorter/jquery-latest.js" type="text/javascript"></script>
     </head> 
     <body onload="LoadFixtures()">
         <div id= "header"><h1>UEFA European Championship 2016 Final Tournament - Group Stage</h1></div>
@@ -78,28 +80,42 @@ and open the template in the editor.
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#"  role="button" aria-haspopup="true" aria-expanded="false" ><button  id="resultPredictor2" type="button" class="btn btn btn-info">Results predictor</button><span class="caret"></span></a>
-                            <div id="update"></div>
+                        <!--li class="dropdown"-->
 
-                            <!--table id="my-table"  table class="table table-striped">
-                <tr><th>Team 1</th><th>Team 2</th><th>Results</th></tr>
-                <tr><td>Brazil</td><td>Ireland</td><td contenteditable="true"></td></tr>
-                <tr><td>Ireland</td><td>England</td><td contenteditable="true"></td></tr>
-                <tr><td>Italy</td><td>Ireland</td><td contenteditable="true"></td></tr>
-                <tr><td>Italy</td><td>England</td><td contenteditable="true"></td></tr>
-                <tr><td>Italy</td><td>Brazil</td><td contenteditable="true"></td></tr>
+                        <!--a href="#"  role="button" aria-haspopup="true" aria-expanded="false" ><button  id="resultPredictor2" type="button" class="btn btn btn-info">Results predictor</button><span class="caret"></span></a-->
+                        <!--div id="update"></div-->
+                        <form>
+                            <!--table id="myTable"   class="table table-striped" autocomplete="on"-->
+                            <table id="myTable"   class="table table-striped" autocomplete="on">
+/** The page should also contain a result predictor
+.
+The match results can be entered 
+manually or via an auto complete button. As the results are given
+the table 
+positions of the teams should dynamically update.
 
-            </table-->
-                            <!--ul class="dropdown-menu">
-                                <li><></li>
-                                <li></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul-->
-                        </li>
+
+
+N.B 23_04_17 @ 22:01  The brief states that the table should re-order according to the scores entered, its not stating that they have to be save
+That could be done with an array or Local Storage
+. **/
+                                <tr><th>Team 1</th><th>Results</th><th>Team 2</th><th>Results</th></tr>
+                                <tr><td contenteditable="true">Brazil</td><td contenteditable="true"></td><td contenteditable="true">Ireland</td><td contenteditable="true"></td></tr>
+                                <tr><td contenteditable="true">Ireland</td><td contenteditable="true"></td><td contenteditable="true">England</td><td contenteditable="true"></td></tr>
+                                <tr><td contenteditable="true">Italy</td><td contenteditable="true"></td><td contenteditable="true">Ireland</td><td contenteditable="true"></td></tr>
+                                <tr><td contenteditable="true">Italy</td><td contenteditable="true"></td><td contenteditable="true">England</td><td contenteditable="true"></td></tr>
+                                <tr><td contenteditable="true">Italy</td><td contenteditable="true"></td><td contenteditable="true">Brazil</td><td contenteditable="true"></td></tr>
+
+                            </table>
+                        </form>          <!--ul class="dropdown-menu">
+                            <li><></li>
+                            <li></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul-->
+                        <!--/li-->
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

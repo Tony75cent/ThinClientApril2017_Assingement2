@@ -6,7 +6,10 @@
 
 
 $(document).ready(function () {
-
+   /** { **/
+		/** $("#myTable").tablesorter();  **/
+/**	} **/
+	
     $("#openweathermap-widget").on("mouseover", textMsg);
     $("#openweathermap-widget").on("mouseout", textMsg2);
     $("#resultPredictor").on("click",makeTableVisible);
@@ -52,7 +55,9 @@ $(document).ready(function () {
         url: "matchFixtures.xml",
         dataType: "xml",
         success: function (xml) {
-            var table = '<table>';
+            var table = '<table  class = table-bordered >'; 
+                      /**  var table = '<table id="myTable" class= "tablesorter" class = table-bordered >'; **/
+
             table += '<thead><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>';
 
             $(table).addClass('table table-striped'); 

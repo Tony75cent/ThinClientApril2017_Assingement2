@@ -106,7 +106,7 @@ function initialize2() {
 
 window.myWidgetParam = {
     id: 13,
-    cityid: 2966794,
+    cityid: 2964574,
     appid: '34b81063056317188429f8bc5c4e347a',
     units: 'metric',
     containerid: 'openweathermap-widget',

@@ -121,4 +121,44 @@ window.myWidgetParam = {
 })();
 
 
-  
+  function CreateResultsPredictor(rows) {
+  var arr = ["Brazil","Ireland",];
+
+  for (var i=0;i<rows;i++) {
+     arr[i] = [];
+  }
+
+  return arr;
+}
+
+
+function createTableFixtures(){
+    
+    var data = [
+  ["Flash", 22722],
+  ["Ignite", 5126],
+  ["Heal", 4666],
+  ["Smite", 3970],
+  ["Teleport", 3892],
+  ["Exhaust", 3118],
+  ["Mark", 2495],
+  ["Ghost", 571],
+  ["Barrier", 459],
+  ["Clarity", 239],
+  ["Cleanse", 132],
+  ["Clairvoyance", 10]
+];
+
+var tr;
+for (var i = 0; i < data.length; i++) {
+  tr = $('<tr/>');
+  tr.append("<td>" + data[i][0] + "</td>");
+  tr.append("<td contentedtiable = true >" + data[i][1] + "</td>");
+  $('table').append(tr);
+}
+    
+    
+    
+    
+    
+}

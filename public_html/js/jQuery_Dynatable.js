@@ -124,19 +124,20 @@ $(document).ready(function () {
 
 
  var data = [
-        ["Brazil", 8, "Ireland", 2],
+        ["Brazil", 191, "Ireland", 2],
         ["Ireland", 3, "England", 4],
         ["Italy", 54, "Ireland", 68],
         ["Italy", 787, "England", 8],
-        ["Italy", 191, "Brazil", 140],
+        ["Italy", 6, "Brazil", 140],
     ];
+/**data.sort(function(a,b){return b-a}); **/
+data.sort(compareTwoNumbers);
 
-/**}); **/
 function createTableFixtures() {
 
-    data.sort();  /** The array is sorted  **/
+   /** data.sort();  **/ /** The array is sorted  **/
        /** data[].[].sort();  /** The array is sorted  **/
-
+/**data.sort(function(a,b){return b-a}); **/
     /**data.sort(function(a, b){return b-a}); **/
     var table2 = $('<table></table>').addClass('table table-striped');
     var table2 = "<thead class =  'table table-striped'><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>";
@@ -147,7 +148,6 @@ function createTableFixtures() {
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
         tr.append("<td>" + data[i][0] + "</td><td id="+ i+" contenteditable='true'>" + data[i][1] + "</td>" + "<td>" + data[i][2] + "</td>" + "<td contenteditable='true'>" + data[i][3] + "</td>" + "</tr>");
-       /** $('table').append(tr); **/
                 $('#ResultsPredictor').append(tr);
 
 
@@ -168,4 +168,9 @@ function upDateArray(){
     
     
     
+}
+
+function compareTwoNumbers(a,b){
+        
+        return a-b;
 }

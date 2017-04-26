@@ -123,18 +123,17 @@ $(document).ready(function () {
  } ); **/
 
 
-
-
-/**}); **/
-function createTableFixtures() {
-
-    var data = [
+ var data = [
         ["Brazil", 8, "Ireland", 2],
         ["Ireland", 3, "England", 4],
         ["Italy", 54, "Ireland", 68],
         ["Italy", 787, "England", 8],
         ["Italy", 191, "Brazil", 140],
     ];
+
+/**}); **/
+function createTableFixtures() {
+
     data.sort();  /** The array is sorted  **/
        /** data[].[].sort();  /** The array is sorted  **/
 
@@ -147,7 +146,7 @@ function createTableFixtures() {
     var tr;
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
-        tr.append("<td>" + data[i][0] + "</td><td contenteditable='true'>" + data[i][1] + "</td>" + "<td>" + data[i][2] + "</td>" + "<td contenteditable='true'>" + data[i][3] + "</td>" + "</tr>");
+        tr.append("<td>" + data[i][0] + "</td><td id="+ i+" contenteditable='true'>" + data[i][1] + "</td>" + "<td>" + data[i][2] + "</td>" + "<td contenteditable='true'>" + data[i][3] + "</td>" + "</tr>");
        /** $('table').append(tr); **/
                 $('#ResultsPredictor').append(tr);
 
@@ -162,4 +161,11 @@ function createTableFixtures() {
 
 
 
+}
+function upDateArray(){
+    
+  /**  TBC **/
+    
+    
+    
 }

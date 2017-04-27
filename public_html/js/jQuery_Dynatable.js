@@ -9,7 +9,9 @@ $(document).ready(function () {
     /** { **/
     /** $("#myTable").tablesorter();  **/
     /**	} **/
-    $("#createTable").on("click", createTableFixtures);
+    $("#createTable").on("click", createMatchResultsPredictorTable);
+  /**  $("#createTable").on("click", createTableFixtures); **/ /** This line works 27.04.17 @ 12:19 **/
+
     $("#openweathermap-widget").on("mouseover", textMsg);
     $("#openweathermap-widget").on("mouseout", textMsg2);
     $("#resultPredictor").on("click", makeTableVisible);
@@ -123,36 +125,36 @@ $(document).ready(function () {
  } ); **/
 
 
- var data = [
-        ["Brazil", 191, "Ireland", 2],
-        ["Ireland", 3, "England", 4],
-        ["Italy", 54, "Ireland", 68],
-        ["Italy", 787, "England", 8],
-        ["Italy", 6, "Brazil", 140],
-    ];
+var data = [
+    ["Brazil", 191, "Ireland", 2],
+    ["Ireland", 3, "England", 4],
+    ["Italy", 54, "Ireland", 68],
+    ["Italy", 787, "England", 8],
+    ["Italy", 6, "Brazil", 140],
+];
 /**data.sort(function(a,b){return b-a}); **/
 data.sort(compareTwoNumbers);
 
 function createTableFixtures() {
 
-   /** data.sort();  **/ /** The array is sorted  **/
-       /** data[].[].sort();  /** The array is sorted  **/
-/**data.sort(function(a,b){return b-a}); **/
+    /** data.sort();  **/ /** The array is sorted  **/
+    /** data[].[].sort();  /** The array is sorted  **/
+    /**data.sort(function(a,b){return b-a}); **/
     /**data.sort(function(a, b){return b-a}); **/
     var table2 = $('<table></table>').addClass('table table-striped');
     var table2 = "<thead class =  'table table-striped'><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>";
- /** $('table').append(table2); **/
+    /** $('table').append(table2); **/
     $('#ResultsPredictor').append(table2);
 
     var tr;
     for (var i = 0; i < data.length; i++) {
         tr = $('<tr/>');
-        tr.append("<td>" + data[i][0] + "</td><td id="+ i+" contenteditable='true'>" + data[i][1] + "</td>" + "<td>" + data[i][2] + "</td>" + "<td contenteditable='true'>" + data[i][3] + "</td>" + "</tr>");
-                $('#ResultsPredictor').append(tr);
+        tr.append("<td>" + data[i][0] + "</td><td id=" + i + " contenteditable='true'>" + data[i][1] + "</td>" + "<td>" + data[i][2] + "</td>" + "<td contenteditable='true'>" + data[i][3] + "</td>" + "</tr>");
+        $('#ResultsPredictor').append(tr);
 
 
-       /** $('table').addClass('table table-striped');  **/
-                $(table2).addClass('table table-striped'); 
+        /** $('table').addClass('table table-striped');  **/
+        $(table2).addClass('table table-striped');
 
 
     }
@@ -162,15 +164,50 @@ function createTableFixtures() {
 
 
 }
-function upDateArray(){
-    
-  /**  TBC **/
-    
-    
-    
+function upDateArray() {
+
+    /**  TBC **/
+
+
+
 }
 
-function compareTwoNumbers(a,b){
-        
-        return a-b;
+function compareTwoNumbers(a, b) {
+
+    return a - b;
+}
+
+
+function createMatchResultsPredictorTable() {
+
+    var matchFixtures =
+            [
+                {"Team1": "Brazil", "result1": "6", "Team2": "Ireland", "result2": "0"},
+                {"Team1": "Ireland", "result1": "3", "Team2": "England", "result2": "0"},
+                {"Team1": "Italy", "result1": "", "Team2": "Ireland", "result2": "0"},
+                {"Team1": "Italy", "result1": "0", "Team2": "Ireland", "result2": "0"},
+                {"Team1": "Italy", "result1": "0", "Team2": "Ireland", "result2": "0"}
+
+
+            ]
+
+    /** Use this  Math.floor(Math.random()*7  to generate random numbers between 0-7 for filling the   **/
+
+    var table = document.getElementById('table');
+    matchFixtures.forEach(function (object) {
+        var tr = document.createElement('tr');
+        tr.innerHTML = '<td>' + object.Team1 + '</td>' +
+                '<td contenteditable= true>' + object.result1 + '</td>' +
+                '<td>' + object.Team2 + '</td>' +
+                '<td contenteditable= true>' + object.result2 + '</td>';
+        table.appendChild(tr);
+    });
+
+
+}
+function randomNumberGenerator(){
+    
+    Math.floor((Math.random() * 7) + 1);
+    
+    
 }

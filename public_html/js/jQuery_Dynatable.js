@@ -10,7 +10,7 @@ $(document).ready(function () {
     /** $("#myTable").tablesorter();  **/
     /**	} **/
     $("#createTable").on("click", createMatchResultsPredictorTable);
-  /**  $("#createTable").on("click", createTableFixtures); **/ /** This line works 27.04.17 @ 12:19 **/
+    /**  $("#createTable").on("click", createTableFixtures); **/ /** This line works 27.04.17 @ 12:19 **/
 
     $("#openweathermap-widget").on("mouseover", textMsg);
     $("#openweathermap-widget").on("mouseout", textMsg2);
@@ -179,9 +179,11 @@ function compareTwoNumbers(a, b) {
 
 
 function createMatchResultsPredictorTable() {
+    var table = document.getElementById('table').innerHTML = "";
 
     var matchFixtures =
             [
+                /** {"Team1": "Team", "Result": "Result", "Team2": "Team", "Result": "Result"},**/
                 {"Team1": "Brazil", "result1": "6", "Team2": "Ireland", "result2": "0"},
                 {"Team1": "Ireland", "result1": "3", "Team2": "England", "result2": "0"},
                 {"Team1": "Italy", "result1": "", "Team2": "Ireland", "result2": "0"},
@@ -193,21 +195,28 @@ function createMatchResultsPredictorTable() {
 
     /** Use this  Math.floor(Math.random()*7  to generate random numbers between 0-7 for filling the   **/
 
-    var table = document.getElementById('table');
+    table = document.getElementById('table');
+   /** '<thead><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>'; **/
+  /**  table.appendChild(tableHeading); **/
     matchFixtures.forEach(function (object) {
         var tr = document.createElement('tr');
+      /**  tr.innerHTML = '<thead><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>'; **/
         tr.innerHTML = '<td>' + object.Team1 + '</td>' +
-                '<td contenteditable= true>' + object.result1 + '</td>' +
+                /** '<td contenteditable= true>' + object.result1 + '</td>' + **/
+                '<td contenteditable= true>' + randomNumberGenerator() + '</td>' +
                 '<td>' + object.Team2 + '</td>' +
-                '<td contenteditable= true>' + object.result2 + '</td>';
+                /** '<td contenteditable= true>' + object.result2 + '</td>'; **/
+                '<td contenteditable= true>' + randomNumberGenerator() + '</td>';
+
+
         table.appendChild(tr);
     });
 
 
 }
-function randomNumberGenerator(){
-    
-    Math.floor((Math.random() * 7) + 1);
-    
-    
+function randomNumberGenerator() {
+
+    var randomNumber = Math.floor((Math.random() * 7) + 1);
+    return randomNumber;
+
 }

@@ -31,8 +31,7 @@ function LoadFixtures(order) {
 
 
 
-/**google.load("feeds", "1"); **/
-// window.onclick="initalize()";
+
 
 function createResultsPredictor() {
 
@@ -48,8 +47,7 @@ function createResultsPredictor() {
 
         ]
     }
-    var table = '<table>';
-    table += '<thead><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>';
+   
 
 
     $(table).addClass('table table-striped');
@@ -120,6 +118,4 @@ window.myWidgetParam = {
     s.parentNode.insertBefore(script, s);
 })();
 
-
-  
 

@@ -10,7 +10,7 @@ $(document).ready(function () {
     /** $("#myTable").tablesorter();  **/
     /**	} **/
     $("#createTable").on("click", createMatchResultsPredictorTable);
-    /**  $("#createTable").on("click", createTableFixtures); **/ /** This line works 27.04.17 @ 12:19 **/
+    /**  $("#createTable").on("click", createTableFixtures); **/ 
 
     $("#openweathermap-widget").on("mouseover", textMsg);
     $("#openweathermap-widget").on("mouseout", textMsg2);
@@ -196,17 +196,32 @@ function createMatchResultsPredictorTable() {
     /** Use this  Math.floor(Math.random()*7  to generate random numbers between 0-7 for filling the   **/
 
     table = document.getElementById('table');
-   /** '<thead><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>'; **/
-  /**  table.appendChild(tableHeading); **/
+    var header = table.createTHead();
+    var row = header.insertRow(0);
+    var cell0 = row.insertCell(0);
+    var cell1 = row.insertCell(1);
+    var cell2 = row.insertCell(2);
+    var cell3 = row.insertCell(3);
+    var cell4 = row.insertCell(4);
+    var cell5 = row.insertCell(5);
+
+    cell0.innerHTML = "<b>Team 1</b>";
+    cell1.innerHTML = "<b>Result</b>";
+    cell2.innerHTML = "<b>Update</b>";
+    cell3.innerHTML = "<b>Team 2</b>";
+    cell4.innerHTML = "<b>Result</b>";
+    cell5.innerHTML = "<b>Update</b>";
+
+
+
     matchFixtures.forEach(function (object) {
         var tr = document.createElement('tr');
-      /**  tr.innerHTML = '<thead><tr><th>Team 1</th><th>Result</th><th>Team 2</th><th>Result</th></tr></thead>'; **/
         tr.innerHTML = '<td>' + object.Team1 + '</td>' +
-                /** '<td contenteditable= true>' + object.result1 + '</td>' + **/
-                '<td contenteditable= true>' + randomNumberGenerator() + '</td>' +
+                '<td contenteditable= true id='+i+'>' + randomNumberGenerator() + '</td>' + '<td>' + '<button  class="btn btn-success" id="createTable0">Update</button>' +
+                '</td>' +
                 '<td>' + object.Team2 + '</td>' +
-                /** '<td contenteditable= true>' + object.result2 + '</td>'; **/
-                '<td contenteditable= true>' + randomNumberGenerator() + '</td>';
+                '<td contenteditable= true>' + randomNumberGenerator() + '</td>' + '<td>' + '<button  class="btn btn-success" id="createTable1">Update</button>' +
+                '</td>' +'<br>';
 
 
         table.appendChild(tr);
@@ -219,4 +234,11 @@ function randomNumberGenerator() {
     var randomNumber = Math.floor((Math.random() * 7) + 1);
     return randomNumber;
 
+}
+function localStorage(arg1){
+    if (typeof(Storage) !== "undefined"){
+    Storage.setItem("Team1",arg1);
+    }
+    
+    
 }
